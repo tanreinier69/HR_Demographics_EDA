@@ -80,7 +80,8 @@ SELECT employeename,
 		EXTRACT(MONTH FROM AGE('2018-07-09'::DATE, dateofhire)) AS tenure_months
 FROM hrdata
 WHERE employmentstatus = 'Active'
-ORDER BY tenure_year DESC;
+ORDER BY tenure_year DESC
+LIMIT 5;
 
 
 --3. Top 10 employees with the most absences
@@ -115,7 +116,8 @@ SELECT employeename,
 		EXTRACT(MONTH FROM AGE('2018-07-09'::DATE, dateofhire)) AS tenure_months
 FROM hrdata
 WHERE employmentstatus = 'Active'
-ORDER BY tenure_year ASC;
+ORDER BY tenure_year ASC
+LIMIT 5;
 
 
 --6. What is the percentage of difference of active male and females in the workplace
@@ -162,7 +164,7 @@ FROM hrdata
 WHERE employmentstatus = 'Active';
 --207 Active employees
 
-SELECT COUNT(employeeid) AS total_active_employee
+SELECT COUNT(employeeid) AS total_inactive_employee
 FROM hrdata
 WHERE employmentstatus LIKE '%Terminated%';
 --103 inactive employees
